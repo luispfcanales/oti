@@ -2,7 +2,7 @@ package handler
 
 import "net/http"
 
-const url = "https://sites.google.com/unamad.edu.pe/hoja-de-servicio-oti/pagina-principal"
+const url = "https://docs.google.com/forms/d/e/1FAIpQLSer6WCD7JdmeMTP-C9iuS5tsL2BcMTcq4OIz_ReN0YY0KTqBg/viewform?usp=sharing"
 
 // Soporte is handler to redirect
 func Soporte(w http.ResponseWriter, r *http.Request) {
