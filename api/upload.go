@@ -8,8 +8,8 @@ import (
 )
 
 func Upload(w http.ResponseWriter, r *http.Request) {
-	var pc *entity.Computer
-	var msg *entity.ReponseApi
+	var pc entity.Computer
+	var msg entity.ReponseApi
 
 	w.Header().Add("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -19,13 +19,13 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case http.MethodPost:
 		defer r.Body.Close()
-		json.NewDecoder(r.Body).Decode(pc)
+		json.NewDecoder(r.Body).Decode(&pc)
 
 		msg.Status = http.StatusCreated
 		msg.Message = "success"
 		msg.Data = pc
 
-		json.NewEncoder(w).Encode(msg)
+		json.NewEncoder(w).Encode(&msg)
 		break
 	default:
 		http.NotFound(w, r)
