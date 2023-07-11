@@ -23,7 +23,7 @@ func Upload(w http.ResponseWriter, r *http.Request) {
 
 		msg.Status = http.StatusCreated
 		msg.Message = "success"
-		msg.Data = pc
+		msg.Code = "u0msddo023"
 
 		json.NewEncoder(w).Encode(&msg)
 		break
